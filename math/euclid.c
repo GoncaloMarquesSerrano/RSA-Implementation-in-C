@@ -1,5 +1,5 @@
-#include <stdio.h>
-
+#include <gmp.h>
+/*
 long long gcd(long long a, long long b) {
   while (b != 0) {
     long long aux = b;
@@ -35,4 +35,12 @@ long long mmi(long long e, long long phi) {
     return -1;
   }
   return (x % phi + phi) % phi;
+}*/
+
+int modular_inverse(mpz_t result, mpz_t e, mpz_t phi) {
+  if (mpz_invert(result, e, phi) == 0) {
+    return -1;
+  }
+
+  return 0;
 }

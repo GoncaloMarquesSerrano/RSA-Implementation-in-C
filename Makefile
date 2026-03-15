@@ -4,7 +4,6 @@ TARGET = rsa
 
 SRC = main.c \
       math/euclid.c \
-      math/modular.c \
       math/primes.c \
       rsa_d/keygen.c \
       rsa_d/encrypt.c \
@@ -15,7 +14,7 @@ OBJ = $(SRC:.c=.o)
 all: $(TARGET)
 
 $(TARGET): $(OBJ)
-	$(CC) $(CFLAGS) -o $@ $^
+	$(CC) $(CFLAGS) -o $@ $^ -lgmp
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $<

@@ -1,7 +1,7 @@
+#include <gmp.h>
 #ifndef EUCLID_H
 #define EUCLID_H
 
-long long gcd(long long a, long long b);
-long long mmi(long long a, long long b);
+int modular_inverse(mpz_t result, mpz_t e, mpz_t phi);
 
 #endif
